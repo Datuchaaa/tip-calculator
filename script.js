@@ -17,7 +17,7 @@ const updateValues = () => {
     numberPplInput.style.border = "1px solid red";
     moneyInput.classList.add("err-people", "err-bill");
     return;
-  }
+  } 
 
   tipMoney.textContent = (tipPercentage * newBillInput) / 100;
   totalMoney.textContent = newBillInput / newNumberPlpInput + tipMoney.textContent / 2;
