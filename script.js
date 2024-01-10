@@ -12,13 +12,18 @@ const updateValues = () => {
   const newNumberPlpInput = parseFloat(numberPplInput.value);
   const tipPercentage =
     parseFloat(customInput.value) || parseFloat(event.target.textContent);
-
+// if (newBillInput || newNumberPlpInput) {
+//   billInput.style.border = "1px solid red";
+//     numberPplInput.style.border = "1px solid red";
+//     moneyInput.classList.add("err-people", "err-bill");
+//     return;
+// }
   if (!newBillInput || !newNumberPlpInput) {
     billInput.style.border = "1px solid red";
     numberPplInput.style.border = "1px solid red";
     moneyInput.classList.add("err-people", "err-bill");
     return;
-  }
+  } 
 
   tipMoney.textContent = (tipPercentage * newBillInput) / 100;
   totalMoney.textContent =
