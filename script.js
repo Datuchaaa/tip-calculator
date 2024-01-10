@@ -10,17 +10,19 @@ const customInput = document.querySelector(".custom-input");
 const updateValues = () => {
   const newBillInput = parseFloat(billInput.value);
   const newNumberPlpInput = parseFloat(numberPplInput.value);
-  const tipPercentage = parseFloat(customInput.value) || parseFloat(event.target.textContent);
+  const tipPercentage =
+    parseFloat(customInput.value) || parseFloat(event.target.textContent);
 
   if (!newBillInput || !newNumberPlpInput) {
     billInput.style.border = "1px solid red";
     numberPplInput.style.border = "1px solid red";
     moneyInput.classList.add("err-people", "err-bill");
     return;
-  } 
+  }
 
   tipMoney.textContent = (tipPercentage * newBillInput) / 100;
-  totalMoney.textContent = newBillInput / newNumberPlpInput + tipMoney.textContent / 2;
+  totalMoney.textContent =
+    newBillInput / newNumberPlpInput + tipMoney.textContent / 2;
 };
 
 percentButtons.addEventListener("click", updateValues);
@@ -29,8 +31,11 @@ customInput.addEventListener("keydown", updateValues);
 
 rstButton.addEventListener("click", () => {
   tipMoney.textContent = totalMoney.textContent = "0.00";
+
   billInput.value = numberPplInput.value = customInput.value = "";
+
   billInput.style.border = numberPplInput.style.border = "none";
+
   moneyInput.classList.remove("err-bill", "err-people");
 });
 
@@ -43,9 +48,6 @@ numberPplInput.addEventListener("keydown", () => {
   numberPplInput.style.border = "none";
   moneyInput.classList.remove("err-people");
 });
-
-
-
 
 // down is old code
 
